@@ -25,7 +25,9 @@ import controllore.regole.scacco.RegoleScacco;
  */
 public class RegoleTest {
 
-	// Testo lo scacco matto con lo scacco dell'imbecille.
+	/**
+	 * Testo lo scacco matto con lo scacco dell'imbecille.
+	 */
 	@Test
 	public void scaccoMatto(){
 		Configurazione conf = new ConfigurazioneMatrice();
@@ -41,6 +43,9 @@ public class RegoleTest {
 		Assert.assertTrue(new RegoleScacco().isScaccoMatto(conf, Modello.BIANCO));
 	}
 	
+	/**
+	 * Testo lo scacco in una configurazione.
+	 */
 	@Test
 	public void scacco(){
 		Configurazione conf = new ConfigurazioneMatrice();
@@ -59,6 +64,9 @@ public class RegoleTest {
 		Assert.assertEquals(0, new RegoleScacco().verificaMosse(conf, new Point(0,4)).size());
 	}
 	
+	/**
+	 * Testo le mosse del pedone in una certa configurazione.
+	 */
 	@Test
 	public void mossePedone(){
 		Configurazione conf = new ConfigurazioneMatrice();
@@ -74,6 +82,9 @@ public class RegoleTest {
 		Assert.assertTrue(mosse.contains(new Point(3,4)));
 	}
 	
+	/**
+	 * Testo le mosse del cavallo in una certa configurazione.
+	 */
 	@Test
 	public void mosseCavallo(){
 		Configurazione conf = new ConfigurazioneMatrice();
@@ -86,7 +97,7 @@ public class RegoleTest {
 		
 		HashSet<Point> mosse = new RegoleScacco().verificaMosse(conf, new Point(3,3));
 		
-		Assert.assertEquals(8, mosse.size()); // avanti + mangiata sx
+		Assert.assertEquals(8, mosse.size());
 		Assert.assertTrue(mosse.contains(new Point(2,1)));
 		Assert.assertTrue(mosse.contains(new Point(1,2))); // mangio il pedone
 		Assert.assertTrue(mosse.contains(new Point(1,4)));
@@ -97,6 +108,9 @@ public class RegoleTest {
 		Assert.assertTrue(mosse.contains(new Point(5,4)));
 	}
 	
+	/**
+	 * Testo le mosse della torre in una certa configurazione.
+	 */
 	@Test
 	public void mosseTorre(){
 		Configurazione conf = new ConfigurazioneMatrice();
@@ -110,6 +124,9 @@ public class RegoleTest {
 		}
 	}
 	
+	/**
+	 * Testo le mosse dell'alfiere in una certa configurazione.
+	 */
 	@Test
 	public void mosseAlfiere(){
 		Configurazione conf = new ConfigurazioneMatrice();
@@ -128,6 +145,9 @@ public class RegoleTest {
 		Assert.assertTrue(mosse.contains(new Point(2,0))); // mangio il pedone
 	}
 	
+	/**
+	 * Testo le mosse della regina in una certa configurazione.
+	 */
 	@Test
 	public void mosseRegina(){
 		Configurazione conf = new ConfigurazioneMatrice();
@@ -143,6 +163,9 @@ public class RegoleTest {
 		Assert.assertEquals(20, mosse.size());
 	}
 	
+	/**
+	 * Testo le mosse del re in una certa configurazione.
+	 */
 	@Test
 	public void mosseRe(){
 		Configurazione conf = new ConfigurazioneMatrice();
